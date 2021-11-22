@@ -35,12 +35,46 @@ body {
 }
 
 .AuthFormContainer {
-    width: 460px;
+    width: calc(460px - 6rem);
+    padding: 2rem 3rem;
     background-color: $offLight;
-    height: 600px;
     border-radius: $radiusSm;
-    margin: 10vh auto;
+    margin: 8vh auto 10vh auto;
     box-shadow: $mainShadow;
+}
+.AuthFormContainer form {
+    margin-top: 1rem;
+}
+
+.AuthFormContainer input {
+    width: calc(100% - 0.5rem);
+    font-weight: 500;
+    background-color: $offLight;
+}
+
+.AuthFormContainer svg {
+    fill: $mid;
+    margin-right: 0.25rem;
+}
+
+.AuthFormContainer button {
+    background-color: $offDark;
+    color: $light;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    margin: 2rem auto;
+}
+
+.AuthLink {
+    font-size: 0.9rem;
+    color: $mid;
+    margin-bottom: 1.5rem;
+}
+
+.AuthLink a {
+    color: $dark;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1400px) {

@@ -1,0 +1,42 @@
+@import "../../globals";
+
+.LoginName {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LoginName div {
+    width: calc(49% - 1rem);
+}
+
+.LoginInputWrapper {
+    width: calc(100% - 1rem);
+    padding: 0.825rem 0.5rem;
+    color: $mid;
+    box-shadow: $closeShadow;
+    border-radius: $radiusXs;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.LoginPasswordStrength {
+    color: $mid;
+    margin: 1rem 0 0 0;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.LoginPasswordStrength span {
+    font-weight: 600;
+}
+
+.LoginValidate {
+    color: indianred;
+    font-size: 0.9rem;
+}
+
+.LoginButtonContainer {
+    display: flex;
+    justify-content: space-around;
+}

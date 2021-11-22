@@ -14,6 +14,22 @@ h6 {
     margin: 0;
 }
 
+input {
+    border: none;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border-radius: $radiusXs;
+    border: none;
+    cursor: pointer;
+}
+
 // Auth
 
 .AuthIconHover {

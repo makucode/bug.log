@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import { useLocation, Routes, Route } from "react-router-dom";
-import Login from "../views/auth/Login";
-import Register from "../views/auth/Register";
+import React from "react";
+import { useLocation, Outlet, Link } from "react-router-dom";
 import AuthFooter from "../components/auth/AuthFooter";
 import AuthHeader from "../components/auth/AuthHeader";
 import AuthBackground from "../components/AuthBackground";
@@ -12,12 +10,24 @@ const Auth = () => {
 
     const loginHeading = "Welcome!";
     const loginText = "Log into your account.";
+    const loginLink = (
+        <>
+            No account yet? <Link to="/auth/register">Register here</Link>
+        </>
+    );
     const registerHeading = "Create new account";
-    const registerText = "Create a bug.log account.";
-
-    useEffect(() => {
-        console.log(location);
-    });
+    const registerText = (
+        <>
+            Create a bug.log account now to enhance your workflow
+            <br />
+            with easy bug tracking.
+        </>
+    );
+    const registerLink = (
+        <>
+            Already have an account? <Link to="/auth">Log in here</Link>
+        </>
+    );
 
     return (
         <>
@@ -38,10 +48,12 @@ const Auth = () => {
                         )}
                     </div>
                     <div className={styles.AuthFormContainer}>
-                        <Routes>
-                            <Route path="/" element={<Login />} />
-                            <Route path="/register" element={<Register />} />
-                        </Routes>
+                        <Outlet />
+                        <div className={styles.AuthLink}>
+                            {location.pathname.includes("register")
+                                ? registerLink
+                                : loginLink}
+                        </div>
                     </div>
                     <AuthFooter />
                 </div>

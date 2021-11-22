@@ -1,0 +1,42 @@
+@import "../../globals";
+
+.RegisterName {
+    display: flex;
+    justify-content: space-between;
+}
+
+.RegisterName div {
+    width: calc(49% - 1rem);
+}
+
+.RegisterInputWrapper {
+    width: calc(100% - 1rem);
+    padding: 0.825rem 0.5rem;
+    color: $mid;
+    box-shadow: $closeShadow;
+    border-radius: $radiusXs;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.RegisterPasswordStrength {
+    color: $mid;
+    margin: 1rem 0 0 0;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.RegisterPasswordStrength span {
+    font-weight: 600;
+}
+
+.RegisterValidate {
+    color: indianred;
+    font-size: 0.9rem;
+}
+
+.RegisterButtonContainer {
+    display: flex;
+    justify-content: space-around;
+}
