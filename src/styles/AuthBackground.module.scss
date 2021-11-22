@@ -1,0 +1,22 @@
+@import "globals";
+
+.AuthBackground {
+    display: flex;
+    flex-direction: column;
+    top: 60vh;
+    max-height: 40vh;
+    max-width: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -5;
+}
+
+.AuthBackgroundDivider {
+    transform: rotate(180deg) translateY(-0.5px);
+    fill: $light;
+}
+
+.AuthBackgroundPlane {
+    height: 100vh;
+    background-color: $light;
+}

@@ -1,0 +1,50 @@
+@import "../globals";
+
+body {
+    background: rgb(122, 105, 224);
+    background: linear-gradient(
+        335deg,
+        rgba(122, 105, 224, 1) 0%,
+        rgba(125, 143, 232, 1) 76%
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Auth {
+    max-width: 100vw;
+}
+
+.AuthContent {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.AuthHeading {
+    margin-top: calc(8vh - 2rem);
+    text-align: center;
+    color: $light;
+}
+
+.AuthHeading h1 {
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.AuthFormContainer {
+    width: 460px;
+    background-color: $offLight;
+    height: 600px;
+    border-radius: $radiusSm;
+    margin: 10vh auto;
+    box-shadow: $mainShadow;
+}
+
+@media screen and (max-width: 1400px) {
+    .AuthContent {
+        width: 100vw;
+    }
+}

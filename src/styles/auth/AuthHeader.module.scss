@@ -1,0 +1,47 @@
+@import "../globals.scss";
+
+.AuthHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+.AuthHeaderLeft {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.AuthHeaderLinks {
+    display: flex;
+    margin: 0;
+    margin-left: 2rem;
+    padding: 0;
+}
+
+.AuthHeaderLinks li {
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.AuthHeaderLinks a {
+    color: $offLight;
+    text-decoration: none;
+    transition: all ease-in-out 0.15s;
+}
+
+.AuthHeaderLinks a:hover {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.AuthHeaderRight svg {
+    fill: $light;
+    transition: all ease-in-out 0.15s;
+    cursor: pointer;
+}
+
+.AuthHeaderRight svg:hover {
+    fill: rgba(255, 255, 255, 0.65);
+}

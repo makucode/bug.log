@@ -1,0 +1,28 @@
+@import "globals";
+
+* {
+    margin: 0;
+    font-family: $mainFont;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+// Auth
+
+.AuthIconHover {
+    position: absolute;
+    transform: translate(calc(-50% - 13px), 40px);
+    pointer-events: none;
+    color: $light;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.25rem 0.5rem;
+    border-radius: $radiusSm;
+    transition: all ease-in-out 0.15s;
+}
