@@ -23,9 +23,8 @@ const Auth = () => {
     const registerHeading = "Create new account";
     const registerText = (
         <>
-            Create a bug.log account now to enhance your workflow
-            <br />
-            with easy bug tracking.
+            Create a bug.log account now to enhance your workflow with easy bug
+            tracking.
         </>
     );
     const registerLink = (

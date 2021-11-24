@@ -1,0 +1,41 @@
+@import "../globals";
+
+.List {
+}
+
+.ListTags {
+    background-color: $offLight2;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $dark;
+}
+
+.ListRow {
+    color: $dark;
+}
+
+.ListRow:hover {
+    background-color: $offLight2;
+    box-shadow: $closeShadow;
+    cursor: pointer;
+}
+
+.ListRowTitle {
+    font-weight: 600;
+    color: $darkest;
+}
+
+.ListRow,
+.ListTags {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . .";
+    height: 50px;
+    align-items: center;
+    border-top: solid 1px $offLight;
+    padding: 0 2.5rem;
+    transition: all ease-in-out 0.1s;
+}

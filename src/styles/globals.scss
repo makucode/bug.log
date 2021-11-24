@@ -9,7 +9,8 @@ $dark: #3d516f;
 $offDark: #706be9;
 $mid: #adb5bd;
 $light: #fff;
-$offLight: #f7f7fe;
+$offLight: #f0f2f9;
+$offLight2: #f6f9fc;
 
 // Borders
 
@@ -21,3 +22,11 @@ $radiusXs: 4px;
 $mainShadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
 $sideShadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.05);
 $closeShadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
+
+// Breakpoints
+
+$xl: 1400px;
+$l: 1200px;
+$m: 1024px;
+$s: 800px;
+$xs: 500px;

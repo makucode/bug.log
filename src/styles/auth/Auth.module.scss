@@ -34,6 +34,11 @@ body {
     font-weight: 600;
 }
 
+.AuthHeading p {
+    width: calc(460px - 6rem);
+    margin: 0 auto;
+}
+
 .AuthFormContainer {
     width: calc(460px - 6rem);
     padding: 2rem 3rem;
@@ -90,8 +95,18 @@ body {
     text-decoration: none;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: $l) {
     .AuthContent {
         width: 100vw;
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .AuthFormContainer {
+        width: calc(95% - 6rem);
+    }
+
+    .AuthHeading p {
+        width: calc(95% - 6rem);
     }
 }

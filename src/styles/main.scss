@@ -12,6 +12,7 @@ h4,
 h5,
 h6 {
     margin: 0;
+    color: $dark;
 }
 
 input {
@@ -28,6 +29,7 @@ button {
     border-radius: $radiusXs;
     border: none;
     cursor: pointer;
+    font-size: 1rem;
 }
 
 // Auth

@@ -1,0 +1,24 @@
+@import "../globals.scss";
+
+.Container {
+    border-radius: $radiusSm;
+    box-shadow: $closeShadow;
+    background-color: $light;
+}
+
+.ContainerHeading {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 2.5rem;
+}
+
+.ContainerButton {
+    color: $light !important;
+    background-color: $offDark !important;
+    font-size: 0.825rem;
+}
+
+.Container h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}

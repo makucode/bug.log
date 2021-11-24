@@ -12,7 +12,6 @@ const Dashboard = () => {
                 <DashboardHeader />
                 <Outlet />
             </div>
-            <header></header>
         </main>
     );
 };

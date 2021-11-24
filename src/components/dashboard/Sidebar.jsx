@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Logo from "../Logo";
 import DashboardIcon from "../icons/DashboardIcon";
@@ -10,36 +10,70 @@ import UsersIcon from "../icons/UsersIcon";
 
 const Sidebar = () => {
     const auth = { user: { role: "admin" } }; //useSelector((state) => state.auth); <----- !!!
+    const location = useLocation();
+
     return (
         <nav className={styles.Sidebar}>
             <div className={styles.SidebarLogo}>
                 <Logo />
             </div>
             <ul className={styles.SidebarLinks}>
-                <li>
-                    <div className={styles.SidebarIcon}>
-                        <DashboardIcon />
-                    </div>
-                    <Link to="/dashboard">Dashboard</Link>
+                <li
+                    className={
+                        location.pathname.toString() === "/dashboard"
+                            ? styles.NavActive
+                            : ""
+                    }
+                >
+                    <Link to="/dashboard">
+                        <div className={styles.SidebarIcon}>
+                            <DashboardIcon />
+                        </div>
+                        Dashboard
+                    </Link>
                 </li>
-                <li>
-                    <div className={styles.SidebarIcon}>
-                        <ProjectIcon />
-                    </div>
-                    <Link to="/projects">Projects</Link>
+                <li
+                    className={
+                        location.pathname.includes("projects")
+                            ? styles.NavActive
+                            : ""
+                    }
+                >
+                    <Link to="/dashboard/projects">
+                        <div className={styles.SidebarIcon}>
+                            <ProjectIcon />
+                        </div>
+                        Projects
+                    </Link>
                 </li>
-                <li>
-                    <div className={styles.SidebarIcon}>
-                        <UserCircleIcon />
-                    </div>
-                    <Link to="/me">My Account</Link>
+                <li
+                    className={
+                        location.pathname.includes("profile")
+                            ? styles.NavActive
+                            : ""
+                    }
+                >
+                    <Link to="/dashboard/profile">
+                        <div className={styles.SidebarIcon}>
+                            <UserCircleIcon />
+                        </div>
+                        My Account
+                    </Link>
                 </li>
                 {auth.user && auth.user.role === "admin" && (
-                    <li>
-                        <div className={styles.SidebarIcon}>
-                            <UsersIcon />
-                        </div>
-                        <Link to="/me">Users</Link>
+                    <li
+                        className={
+                            location.pathname.includes("admin")
+                                ? styles.NavActive
+                                : ""
+                        }
+                    >
+                        <Link to="/dashboard/admin">
+                            <div className={styles.SidebarIcon}>
+                                <UsersIcon />
+                            </div>
+                            Users
+                        </Link>
                     </li>
                 )}
             </ul>

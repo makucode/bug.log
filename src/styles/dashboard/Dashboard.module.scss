@@ -2,12 +2,26 @@
 
 .Dashboard {
     display: flex;
+    background-color: $offLight;
 }
 
 .DashboardContent {
-    background-color: $light;
+    background-color: $offLight;
     width: 100%;
     max-width: 100%;
     height: 120vh;
     margin-left: 260px;
+}
+
+.DashboardContent button {
+    padding: 0.25rem 0.5rem;
+    box-shadow: $closeShadow;
+    color: $offDark;
+    background-color: $light;
+    transition: all ease-in-out 0.1s;
+}
+
+.DashboardContent button:hover {
+    transform: translateY(-2px);
+    color: $darkest;
 }
