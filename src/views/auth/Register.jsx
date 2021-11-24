@@ -3,6 +3,8 @@ import LockIcon from "../../components/icons/LockIcon";
 import EnvelopeIcon from "../../components/icons/EnvelopeIcon";
 import UserIcon from "../../components/icons/UserIcon";
 import styles from "../../styles/views/auth/Register.module.scss";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../store/auth";
 
 const Register = () => {
     const [firstName, setFirstName] = useState("");
@@ -13,6 +15,8 @@ const Register = () => {
     const [passwordStr, setPasswordStr] = useState();
     const [validateErr, setValidateErr] = useState();
 
+    const dispatch = useDispatch();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!passwordStr || passwordStr === "weak") {
@@ -21,7 +25,8 @@ const Register = () => {
             );
         }
         setValidateErr(null);
-        console.log("submit");
+
+        dispatch(registerUser({ firstName, lastName, email, password }));
     };
 
     useEffect(() => {

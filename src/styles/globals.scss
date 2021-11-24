@@ -4,8 +4,9 @@ $mainFont: "Source Sans Pro", sans-serif;
 
 // Colors
 
+$darkest: black;
 $dark: #3d516f;
-$offDark: #7d8fe8;
+$offDark: #706be9;
 $mid: #adb5bd;
 $light: #fff;
 $offLight: #f7f7fe;
@@ -18,4 +19,5 @@ $radiusXs: 4px;
 // Shadows
 
 $mainShadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.15);
+$sideShadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.05);
 $closeShadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);

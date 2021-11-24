@@ -1,0 +1,46 @@
+@import "../globals.scss";
+
+.DashboardHeader {
+    height: calc(90px - 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    background-color: $offDark;
+    color: $light;
+}
+
+.DashboardHeader {
+    height: calc(90px - 1rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    background-color: $offDark;
+    color: $light;
+}
+
+.HeaderPath {
+    background-color: $offLight;
+    color: $dark;
+    padding: 0.75rem 1.5rem;
+    border-radius: $radiusXs;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.HeaderPathPart {
+    margin-right: 0.5rem;
+    text-transform: capitalize;
+}
+
+.HeaderProfileLink a {
+    text-decoration: none;
+    color: $light;
+    transition: ease-in-out all 0.1s;
+}
+
+.HeaderProfileLink a:hover {
+    color: $mid;
+}

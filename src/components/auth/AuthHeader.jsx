@@ -11,7 +11,7 @@ const AuthHeader = () => {
                 <Logo />
                 <ul className={styles.AuthHeaderLinks}>
                     <li>
-                        <Link to="/auth/login">Login</Link>
+                        <Link to="/auth">Login</Link>
                     </li>
                     <li>
                         <Link to="/auth/register">Register</Link>

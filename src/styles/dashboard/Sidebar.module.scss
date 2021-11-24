@@ -1,0 +1,58 @@
+@import "../globals";
+
+.Sidebar {
+    background-color: $light;
+    width: 260px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: $sideShadow;
+}
+
+.SidebarLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px;
+}
+
+.SidebarLogo img {
+    filter: invert(55%) sepia(22%) saturate(6875%) hue-rotate(220deg)
+        brightness(93%) contrast(96%);
+}
+
+.SidebarLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 210px;
+    margin-top: 2rem;
+}
+
+.SidebarLinks li {
+    display: flex;
+}
+
+.SidebarIcon {
+    width: 30px;
+    margin-right: 0.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SidebarLinks svg {
+    fill: $mid;
+    stroke: $mid;
+}
+
+.SidebarLinks a {
+    text-decoration: none;
+    color: $darkest;
+    margin: 1rem 0;
+    display: block;
+}
