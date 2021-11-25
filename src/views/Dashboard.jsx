@@ -3,6 +3,7 @@ import { Outlet } from "react-router";
 import Sidebar from "../components/dashboard/Sidebar";
 import DashboardHeader from "../components/dashboard/DashboardHeader";
 import styles from "../styles/dashboard/Dashboard.module.scss";
+import DashboardFooter from "../components/dashboard/DashboardFooter";
 
 const Dashboard = () => {
     return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
             <div className={styles.DashboardContent}>
                 <DashboardHeader />
                 <Outlet />
+                <DashboardFooter />
             </div>
         </main>
     );

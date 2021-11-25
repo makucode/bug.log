@@ -22,7 +22,16 @@ function App() {
                     <Route path="/auth" element={<Login />} />
                 </Route>
                 <Route path="/dashboard" element={<Dashboard />}>
+                    <Route
+                        path="/dashboard/projects/:id"
+                        element={<Projects />}
+                    />
                     <Route path="/dashboard/projects" element={<Projects />} />
+                    <Route
+                        path="/dashboard/tickets/:id"
+                        element={<Projects />}
+                    />
+                    <Route path="/dashboard/tickets" element={<Projects />} />
                     <Route path="/dashboard/profile" element={<Account />} />
                     <Route path="/dashboard/admin" element={<Admin />} />
                     <Route path="/dashboard" element={<Home />} />

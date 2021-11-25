@@ -3,3 +3,18 @@
 .Home {
     padding: 1rem 2rem;
 }
+
+.HomeChartWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 0px;
+}
+
+.HomeChart {
+    padding: $contentPadding;
+    padding-top: 0;
+    width: 40%;
+    margin: 0 auto;
+}

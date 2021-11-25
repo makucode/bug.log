@@ -26,6 +26,17 @@
     color: $darkest;
 }
 
+.List a {
+    text-decoration: none;
+}
+
+.ListRow span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.5rem;
+}
+
 .ListRow,
 .ListTags {
     display: grid;

@@ -7,6 +7,7 @@ import styles from "../../styles/dashboard/Sidebar.module.scss";
 import UserCircleIcon from "../icons/UserCircleIcon";
 import ProjectIcon from "../icons/ProjectIcon";
 import UsersIcon from "../icons/UsersIcon";
+import TicketIcon from "../icons/TicketIcon";
 
 const Sidebar = () => {
     const auth = { user: { role: "admin" } }; //useSelector((state) => state.auth); <----- !!!
@@ -44,6 +45,20 @@ const Sidebar = () => {
                             <ProjectIcon />
                         </div>
                         Projects
+                    </Link>
+                </li>
+                <li
+                    className={
+                        location.pathname.includes("tickets")
+                            ? styles.NavActive
+                            : ""
+                    }
+                >
+                    <Link to="/dashboard/tickets">
+                        <div className={styles.SidebarIcon}>
+                            <TicketIcon />
+                        </div>
+                        Tickets
                     </Link>
                 </li>
                 <li

@@ -1,0 +1,19 @@
+@import "../globals.scss";
+
+.DashboardFooter {
+    padding: $contentPadding;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: $mid;
+}
+
+.DashboardFooter a {
+    text-decoration: none;
+    color: $offDark;
+    transition: all ease-in-out 0.1s;
+}
+
+.DashboardFooter a:hover {
+    text-decoration: none;
+    color: $dark;
+}
