@@ -81,6 +81,11 @@ const Auth = () => {
                                         </>
                                     )}
                                 </div>
+                                {auth.error && (
+                                    <div className={styles.AuthError}>
+                                        {auth.error}
+                                    </div>
+                                )}
                                 <div className={styles.AuthFormContainer}>
                                     <Outlet />
                                     <div className={styles.AuthLink}>

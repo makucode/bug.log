@@ -31,3 +31,5 @@ const api =
     };
 
 export default api;
+
+// YOU NEED TO SEND TOKEN WITH REQ HEADER !!!

@@ -58,18 +58,8 @@ export const chartData1 = {
         {
             label: "# of Votes",
             data: [12, 19, 3, 5],
-            backgroundColor: [
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-            ],
-            borderColor: [
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-            ],
+            backgroundColor: ["#FEE085", "#FF8370", "#B9D6F2", "#86B36B"],
+            borderColor: ["#FEE085", "#FF8370", "#B9D6F2", "#86B36B"],
             borderWidth: 0,
         },
     ],
@@ -81,18 +71,8 @@ export const chartData2 = {
         {
             label: "# of Votes",
             data: [12, 19, 3, 5],
-            backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-            ],
-            borderColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-            ],
+            backgroundColor: ["#FF8370", "#FEE085", "#B9D6F2", "#86B36B"],
+            borderColor: ["#FF8370", "#FEE085", "#B9D6F2", "#86B36B"],
             borderWidth: 0,
         },
     ],
@@ -104,11 +84,8 @@ export const chartData3 = {
         {
             label: "# of Votes",
             data: [12, 19],
-            backgroundColor: [
-                "rgba(75, 192, 192, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-            ],
-            borderColor: ["rgba(75, 192, 192, 0.2)", "rgba(255, 206, 86, 0.2)"],
+            backgroundColor: ["#86B36B", "#FEE085"],
+            borderColor: ["#86B36B", "#FEE085"],
             borderWidth: 0,
         },
     ],

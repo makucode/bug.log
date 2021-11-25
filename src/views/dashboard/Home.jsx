@@ -8,7 +8,7 @@ import {
     chartData3,
     list,
     tickets,
-} from "../../assets/imgs/fakeData";
+} from "../../assets/fakeData";
 import Chart from "../../components/dashboard/Chart";
 
 const Home = () => {
@@ -24,7 +24,6 @@ const Home = () => {
             <Container>
                 <div className="ContainerHeading">
                     <h2>Projects</h2>
-                    <button className="ContainerButton">New Project</button>
                 </div>
                 <List list={list} slug="/dashboard/projects/" />
             </Container>

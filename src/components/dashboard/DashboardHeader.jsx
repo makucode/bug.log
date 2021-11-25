@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { logOutUser } from "../../store/auth";
 import styles from "../../styles/dashboard/DashboardHeader.module.scss";
 import HomeIcon from "../icons/HomeIcon";
 
@@ -9,9 +10,11 @@ const DashboardHeader = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const dispatch = useDispatch();
+
     const handleLogout = () => {
-        localStorage.removeItem("auth");
-        navigate("/");
+        dispatch(logOutUser());
+        navigate("/auth");
     };
 
     const pathParts = location.pathname.split("/").splice(1);
@@ -45,7 +48,9 @@ const DashboardHeader = () => {
                 ))}
             </div>
             <div className={styles.HeaderProfileLink}>
-                <Link to="/dashboard/profile">Cooler Tüpp</Link>
+                <Link to="/dashboard/profile">
+                    {auth.user.firstName + " " + auth.user.lastName}
+                </Link>
                 <button onClick={handleLogout}>Logout</button>
             </div>
         </header>

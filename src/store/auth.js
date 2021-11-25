@@ -25,14 +25,33 @@ const authSlice = createSlice({
             auth.user = action.payload;
             localStorage.setItem("auth", JSON.stringify(auth));
         },
+        userLoggedIn: (auth, action) => {
+            auth.loading = false;
+            auth.user = action.payload;
+            localStorage.setItem("auth", JSON.stringify(auth));
+        },
+        userLoggedOut: (auth, action) => {
+            auth.loading = null;
+            auth.user = action.payload;
+            localStorage.removeItem("auth");
+        },
     },
 });
 
-const { userRequested, userRequestFailed, userRegistered } = authSlice.actions;
+const {
+    userRequested,
+    userRequestFailed,
+    userRegistered,
+    userLoggedIn,
+    userLoggedOut,
+} = authSlice.actions;
 
 export default authSlice.reducer;
 
+// Actions
+
 const userUrl = "users";
+const authUrl = "auth";
 
 export const registerUser = (user) => (dispatch) => {
     dispatch(
@@ -45,4 +64,21 @@ export const registerUser = (user) => (dispatch) => {
             onError: userRequestFailed.type,
         })
     );
+};
+
+export const logInUser = (user) => (dispatch) => {
+    dispatch(
+        callRequest({
+            url: authUrl,
+            method: "post",
+            data: user,
+            onRequest: userRequested.type,
+            onSuccess: userLoggedIn.type,
+            onError: userRequestFailed.type,
+        })
+    );
+};
+
+export const logOutUser = () => (dispatch) => {
+    dispatch({ type: userLoggedOut.type });
 };

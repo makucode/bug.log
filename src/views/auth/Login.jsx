@@ -1,14 +1,19 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import EnvelopeIcon from "../../components/icons/EnvelopeIcon";
 import LockIcon from "../../components/icons/LockIcon";
+import { logInUser } from "../../store/auth";
 import styles from "../../styles/views/auth/Login.module.scss";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const dispatch = useDispatch();
+
     const handleSubmit = async (e) => {
         e.preventDefault();
+        dispatch(logInUser({ email, password }));
     };
 
     return (

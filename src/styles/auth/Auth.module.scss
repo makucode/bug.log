@@ -96,6 +96,20 @@ body {
     text-decoration: none;
 }
 
+.AuthError {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 36%);
+    padding: 1rem 2rem;
+    border-radius: $radiusSm;
+    background-color: $offLight;
+    color: $alert;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: $mainShadow;
+    animation: errorAnimation $transitionFast 5s forwards;
+}
+
 @media screen and (max-width: $l) {
     .AuthContent {
         width: 100vw;
@@ -109,5 +123,28 @@ body {
 
     .AuthHeading p {
         width: calc(95% - 6rem);
+    }
+}
+
+@keyframes errorAnimation {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translate(-50%, 36%) scale(0.975);
+    }
+    20% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translate(-50%, 36%) scale(1);
+    }
+    80% {
+        opacity: 1;
+        filter: blur(0px);
+        transform: translate(-50%, 36%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translate(-50%, 36%) scale(0.975);
     }
 }
