@@ -1,17 +1,23 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useLocation, Outlet, Link } from "react-router-dom";
+import { useLocation, Outlet, Link, useNavigate } from "react-router-dom";
 import AuthFooter from "../components/auth/AuthFooter";
 import AuthHeader from "../components/auth/AuthHeader";
 import AuthBackground from "../components/AuthBackground";
 import Loader from "../components/Loader";
 import styles from "../styles/auth/Auth.module.scss";
+import { fadeInUp } from "../utils/animations";
 
 const Auth = () => {
     const location = useLocation();
+    const navigate = useNavigate();
 
     const auth = useSelector((state) => state.auth);
+
+    useEffect(() => {
+        auth.user && navigate("/");
+    }, [auth, navigate]);
 
     const loginHeading = "Welcome!";
     const loginText = "Log into your account.";
@@ -33,23 +39,7 @@ const Auth = () => {
         </>
     );
 
-    const animations = {
-        pageInitial: {
-            opacity: 0,
-            filter: "blur(5px)",
-            transform: "scale(0.985) translateY(50px)",
-        },
-        pageAnimate: {
-            opacity: 1,
-            filter: "blur(0px)",
-            transform: "scale(1) translateY(0px)",
-        },
-        pageExit: {
-            opacity: 0,
-            filter: "blur(5px)",
-            transform: "scale(0.985) translateY(50px)",
-        },
-    };
+    const animations = fadeInUp;
 
     return (
         <>

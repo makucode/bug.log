@@ -1,0 +1,21 @@
+@import "../../globals.scss";
+
+.Project {
+}
+
+.ProjectSection1 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 2rem;
+    min-width: 100%;
+    max-width: 100%;
+}
+
+.ProjectSection1:nth-child(1) {
+    width: 33%;
+}
+
+.ProjectSection1:nth-child(2) {
+    width: 66%;
+}

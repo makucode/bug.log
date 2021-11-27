@@ -52,6 +52,30 @@ export const tickets = {
     ],
 };
 
+export const users = {
+    tags: ["Name", "email", "tickets assigned"],
+    list: [
+        {
+            _id: 1,
+            title: "Ehren Mann",
+            description: "ehrenmann@lol.de",
+            info: "4",
+        },
+        {
+            _id: 2,
+            title: "Cooler Tüpp",
+            description: "cooler@tüpp.de",
+            info: "2",
+        },
+        {
+            _id: 3,
+            title: "Ticket 3",
+            description: "miller@derkiller.net",
+            info: "6",
+        },
+    ],
+};
+
 export const chartData1 = {
     labels: ["Bug", "Error", "UI", "Request"],
     datasets: [

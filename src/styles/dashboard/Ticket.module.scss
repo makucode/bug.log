@@ -1,0 +1,61 @@
+@import "../globals.scss";
+
+.Ticket {
+    padding: $contentPadding;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+}
+
+.TicketContent {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem 0;
+}
+
+.TicketSubHeading {
+    font-size: 0.75rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+}
+
+.TicketRow {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+}
+
+.TicketRow2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+}
+
+.TicketTag {
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    color: $offLight;
+    width: fit-content;
+    border-radius: $radiusR;
+}
+
+.TagGreen {
+    background-color: $green;
+}
+
+.TagOrange {
+    background-color: $orange;
+}
+
+.TagAlert {
+    background-color: $alert;
+}
+.TagBlue {
+    background-color: $blue;
+}

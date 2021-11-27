@@ -1,0 +1,14 @@
+@import "../globals.scss";
+
+.NewTicketForm {
+    position: fixed;
+    background-color: rgba($color: #000000, $alpha: 0.8);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+.NewTicketFormWrapper {
+    width: 400px;
+}

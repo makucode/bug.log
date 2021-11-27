@@ -49,20 +49,6 @@ const Sidebar = () => {
                 </li>
                 <li
                     className={
-                        location.pathname.includes("tickets")
-                            ? styles.NavActive
-                            : ""
-                    }
-                >
-                    <Link to="/dashboard/tickets">
-                        <div className={styles.SidebarIcon}>
-                            <TicketIcon />
-                        </div>
-                        Tickets
-                    </Link>
-                </li>
-                <li
-                    className={
                         location.pathname.includes("profile")
                             ? styles.NavActive
                             : ""

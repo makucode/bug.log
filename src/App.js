@@ -9,7 +9,7 @@ import Login from "./views/auth/Login";
 import Register from "./views/auth/Register";
 import { useSelector } from "react-redux";
 import Dashboard from "./views/Dashboard";
-import Tickets from "./views/dashboard/Tickets";
+import Project from "./views/dashboard/Project";
 
 function App() {
     const auth = useSelector((state) => state.auth);
@@ -22,23 +22,16 @@ function App() {
                 <Route path="/auth" element={<Login />} />
             </Route>
             <Route path="/dashboard" element={<Dashboard />}>
-                <Route path="/dashboard/projects/:id" element={<Projects />} />
+                <Route path="/dashboard/projects/:id" element={<Project />} />
                 <Route path="/dashboard/projects" element={<Projects />} />
-                <Route path="/dashboard/tickets/:id" element={<Tickets />} />
-                <Route path="/dashboard/tickets" element={<Tickets />} />
+                <Route path="/dashboard/tickets/:id" element={<></>} />
                 <Route path="/dashboard/profile" element={<Account />} />
                 <Route path="/dashboard/admin" element={<Admin />} />
                 <Route path="/dashboard" element={<Home />} />
             </Route>
             <Route
                 path="/"
-                element={
-                    isLoggedIn ? (
-                        <Navigate to="/dashboard" />
-                    ) : (
-                        <Navigate to="/auth" />
-                    )
-                }
+                element={<Navigate to={isLoggedIn ? "/dashboard" : "/auth"} />}
             />
             <Route path="*" element={<Navigate to="/" />} />
         </Routes>

@@ -21,12 +21,6 @@ const Home = () => {
                 </div>
                 <List list={tickets} slug="/dashboard/tickets/" />
             </Container>
-            <Container>
-                <div className="ContainerHeading">
-                    <h2>Projects</h2>
-                </div>
-                <List list={list} slug="/dashboard/projects/" />
-            </Container>
             <div className={styles.HomeChartWrapper}>
                 <Container>
                     <div className="ContainerHeading">
