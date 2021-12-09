@@ -42,11 +42,6 @@ const Auth = () => {
                             exit="pageExit"
                             variants={animations}
                         >
-                            {auth.error && (
-                                <div className={styles.AuthError}>
-                                    {auth.error}
-                                </div>
-                            )}
                             <Outlet />
                             <AuthFooter />
                         </motion.div>

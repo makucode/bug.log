@@ -12,10 +12,6 @@ const TicketButtons = ({ currTicket }) => {
     const [updateTicket, setUpdateTicket] = useState(false);
     const [deleteTicket, setDeleteTicket] = useState(false);
 
-    console.log(
-        role === "admin" || role === "manager" || currTicket.author === _id
-    );
-
     return (
         <div className={"ContainerButtons " + styles.TicketButtons}>
             {updateTicket && (

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import AuthContainer from "../../components/auth/AuthContainer";
 import EnvelopeIcon from "../../components/icons/EnvelopeIcon";
@@ -10,6 +10,8 @@ import styles from "../../styles/views/auth/Login.module.scss";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const auth = useSelector((state) => state.auth);
 
     const dispatch = useDispatch();
 
@@ -46,6 +48,13 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
+                    {auth.error && (
+                        <div className={styles.LoginAuthError}>
+                            {auth.error.includes("401")
+                                ? "Invalid Email or Password."
+                                : auth.error}
+                        </div>
+                    )}
                     <div className={styles.LoginButtonContainer}>
                         <button type="submit">Sign In</button>
                     </div>
