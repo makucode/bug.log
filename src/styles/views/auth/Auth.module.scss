@@ -1,4 +1,4 @@
-@import "../globals";
+@import "../../globals";
 
 body {
     background: rgb(122, 105, 224);
@@ -20,63 +20,6 @@ body {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-}
-
-.AuthHeading {
-    margin-top: calc(8vh - 2rem);
-    text-align: center;
-    color: $light;
-}
-
-.AuthHeading h1 {
-    margin-bottom: 0.75rem;
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: $light;
-}
-
-.AuthHeading p {
-    width: calc(460px - 6rem);
-    margin: 0 auto;
-}
-
-.AuthFormContainer {
-    width: calc(460px - 6rem);
-    padding: 2rem 3rem;
-    background-color: $offLight;
-    border-radius: $radiusSm;
-    margin: 8vh auto 10vh auto;
-    box-shadow: $mainShadow;
-}
-.AuthFormContainer form {
-    margin-top: 1rem;
-}
-
-.AuthFormContainer input {
-    width: calc(100% - 0.5rem);
-    font-weight: 500;
-    background-color: $offLight;
-}
-
-.AuthFormContainer svg {
-    fill: $mid;
-    margin-right: 0.25rem;
-}
-
-.AuthFormContainer button {
-    background-color: $offDark;
-    color: $light;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 0.75rem 1.25rem;
-    margin: 2rem auto;
-    border: 2px solid $offDark;
-    transition: all ease-in-out 0.15s;
-}
-
-.AuthFormContainer button:hover {
-    background-color: $light;
-    color: $offDark;
 }
 
 .AuthLink {
@@ -112,7 +55,13 @@ body {
 
 @media screen and (max-width: $l) {
     .AuthContent {
-        width: 100vw;
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: $m) {
+    .AuthContent {
+        width: 99%;
     }
 }
 

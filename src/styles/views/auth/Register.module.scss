@@ -1,5 +1,23 @@
 @import "../../globals";
 
+.AuthHeading {
+    margin-top: calc(8vh - 2rem);
+    text-align: center;
+    color: $light;
+}
+
+.AuthHeading h1 {
+    margin-bottom: 0.75rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: $light;
+}
+
+.AuthHeading p {
+    width: calc(460px - 6rem);
+    margin: 0 auto;
+}
+
 .RegisterName {
     display: flex;
     justify-content: space-between;
@@ -39,4 +57,27 @@
 .RegisterButtonContainer {
     display: flex;
     justify-content: space-around;
+}
+
+.AuthLink {
+    font-size: 0.9rem;
+    color: $mid;
+}
+
+.AuthLink a {
+    color: $dark;
+    text-decoration: none;
+    transition: all ease-in-out 0.15s;
+}
+
+.AuthLink a:hover {
+    color: $offDark;
+    text-decoration: none;
+}
+
+@media screen and (max-width: $xs) {
+    .AuthHeading p {
+        width: calc(100% - 6rem);
+        margin: 0 auto;
+    }
 }

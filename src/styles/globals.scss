@@ -12,9 +12,9 @@ $light: #fff;
 $offLight: #f0f2f9;
 $offLight2: #f6f9fc;
 $alert: indianred;
-$green: #2dce89;
+$green: #30b87d;
 $orange: #fba440;
-$blue: #11cdef;
+$blue: #78c4ec;
 
 // Paddings
 
@@ -34,7 +34,7 @@ $closeShadow: 0 1px 3px rgba(50, 50, 93, 0.15), 0 1px 0 rgba(0, 0, 0, 0.02);
 
 // Transitions
 
-$transitionFast: cubic-bezier(0, 0.99, 0.05, 0.89);
+$transitionFast: cubic-bezier(0, 0.99, 0.25, 0.9);
 
 // Breakpoints
 
@@ -42,4 +42,4 @@ $xl: 1400px;
 $l: 1200px;
 $m: 1024px;
 $s: 800px;
-$xs: 500px;
+$xs: 530px;

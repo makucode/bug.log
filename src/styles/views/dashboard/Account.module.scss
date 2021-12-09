@@ -1,0 +1,87 @@
+@import "../../globals.scss";
+
+.AccountId {
+    color: $mid;
+    font-style: italic;
+    font-size: 0.875rem;
+    margin-left: 0.75rem;
+}
+
+.AccountContent {
+    padding: $contentPadding;
+    padding-top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+}
+
+.AccountLeft {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+}
+
+.AccountRight {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 1rem;
+}
+
+.AccountCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.AccountCol span {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.AccountColContent {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.AccountColContent button {
+    width: fit-content;
+}
+
+.AccountColContent span {
+    margin-right: 0.75rem;
+}
+
+.AccountAdminContact {
+    grid-column: span 2;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark;
+    font-size: 1.25rem;
+}
+
+.AccountChangePassword {
+    color: $light;
+    background-color: $offDark;
+}
+
+.AccountColContent button {
+    font-size: 1rem;
+    width: fit-content;
+}
+
+@media screen and (max-width: $s) {
+    .AccountContent {
+        grid-template-columns: 1fr;
+    }
+
+    .AccountId {
+        display: none;
+    }
+}

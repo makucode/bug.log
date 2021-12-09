@@ -44,3 +44,10 @@ button {
     border-radius: $radiusSm;
     transition: all ease-in-out 0.15s;
 }
+
+// Button
+
+.ButtonAlert {
+    background-color: $alert !important;
+    color: $light !important;
+}

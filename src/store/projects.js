@@ -21,10 +21,6 @@ const projectsSlice = createSlice({
             projects.loading = false;
             projects.projects = action.payload;
         },
-        projectFetched: (projects, action) => {
-            projects.loading = false;
-            projects.projects = action.payload;
-        },
         projectCreated: (projects, action) => {
             projects.loading = false;
             projects.projects = [...projects.projects, action.payload];
@@ -48,7 +44,6 @@ const {
     projectsRequested,
     projectsRequestFailed,
     projectsFetched,
-    projectFetched,
     projectUpdated,
     projectCreated,
     projectDeleted,
@@ -75,23 +70,14 @@ export const fetchProjects = () => (dispatch, getState) => {
     );
 };
 
-export const fetchSingleProject = (_id) => (dispatch, getState) => {
-    dispatch(
-        callRequest({
-            url: url + "/" + _id,
-            method: "get",
-            onRequest: projectsRequested.type,
-            onSuccess: projectFetched.type,
-            onError: projectsRequestFailed.type,
-        })
-    );
-};
-
 export const updateProject = (_id, data) => (dispatch, getState) => {
     dispatch(
         callRequest({
             url: url + "/" + _id,
             method: "put",
+            headers: {
+                "x-auth-token": getState().auth.user.token,
+            },
             data,
             onRequest: projectsRequested.type,
             onSuccess: projectUpdated.type,
@@ -105,6 +91,9 @@ export const createProject = (data) => (dispatch, getState) => {
         callRequest({
             url,
             method: "post",
+            headers: {
+                "x-auth-token": getState().auth.user.token,
+            },
             data,
             onRequest: projectsRequested.type,
             onSuccess: projectCreated.type,
@@ -118,6 +107,9 @@ export const deleteProject = (_id) => (dispatch, getState) => {
         callRequest({
             url: url + "/" + _id,
             method: "delete",
+            headers: {
+                "x-auth-token": getState().auth.user.token,
+            },
             onRequest: projectsRequested.type,
             onSuccess: projectDeleted.type,
             onError: projectsRequestFailed.type,

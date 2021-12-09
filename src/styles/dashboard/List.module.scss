@@ -1,8 +1,5 @@
 @import "../globals";
 
-.List {
-}
-
 .ListTags {
     background-color: $offLight2;
     text-transform: uppercase;
@@ -49,4 +46,40 @@
     border-top: solid 1px $offLight;
     padding: 0 2.5rem;
     transition: all ease-in-out 0.1s;
+}
+
+.ListPrio {
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    color: $offLight;
+    width: fit-content;
+    border-radius: $radiusR;
+}
+
+.PrioLow {
+    background-color: $green;
+}
+
+.PrioHigh {
+    background-color: $orange;
+}
+
+.PrioCritical {
+    background-color: $alert;
+}
+.PrioMid {
+    background-color: $blue;
+}
+
+@media screen and (max-width: $m) {
+    .ListDesc {
+        display: none;
+    }
+
+    .ListRow,
+    .ListTags {
+        grid-template-columns: 4fr 1fr;
+    }
 }

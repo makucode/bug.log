@@ -1,0 +1,102 @@
+@import "../../globals";
+
+.UserListTags {
+    background-color: $offLight2;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $dark;
+}
+
+.UserListRow {
+    color: $dark;
+}
+
+.UserListRowTitle {
+    font-weight: 600;
+    color: $darkest;
+}
+
+.UserList a {
+    text-decoration: none;
+}
+
+.UserListButtons {
+    margin-left: auto;
+}
+
+.UserList button {
+    width: fit-content;
+    font-size: 0.825rem;
+    color: $light;
+    background-color: $offDark;
+    margin-left: auto;
+    margin-left: 0.5rem;
+}
+
+.UserList svg {
+    fill: $light;
+}
+
+.UserListRow span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.5rem;
+}
+
+.UserListRole {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.UserListRow,
+.UserListTags {
+    display: grid;
+    grid-template-columns: 2fr 2fr 0.5fr 0.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . .";
+    height: 50px;
+    align-items: center;
+    border-top: solid 1px $offLight;
+    padding: 0 2.5rem;
+    transition: all ease-in-out 0.1s;
+}
+
+@media screen and (max-width: $xl) {
+    .UserListRow,
+    .UserListTags {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    .UserListDate,
+    .Registered {
+        display: none;
+    }
+}
+
+@media screen and (max-width: $m) {
+    .UserListRow,
+    .UserListTags {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .SubTag,
+    .UserListDate,
+    .UserListMail,
+    .UserListRole {
+        display: none;
+    }
+
+    .UserList button {
+        width: fit-content;
+        height: fit-content;
+        font-size: 0.825rem;
+        color: $light;
+        background-color: $offDark;
+        margin-left: auto;
+        margin-left: 0.5rem;
+        padding: 0.4rem 0.5rem;
+    }
+}

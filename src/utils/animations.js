@@ -33,6 +33,7 @@ export const fadeInScale = {
         transform: "scale(0.985)",
     },
 };
+
 export const fadeIn = {
     pageInitial: {
         opacity: 0,
@@ -45,5 +46,17 @@ export const fadeIn = {
     pageExit: {
         opacity: 0,
         filter: "blur(5px)",
+    },
+};
+
+export const fadeInOpacity = {
+    pageInitial: {
+        opacity: 0,
+    },
+    pageAnimate: {
+        opacity: 1,
+    },
+    pageExit: {
+        opacity: 0,
     },
 };

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import AuthContainer from "../../components/auth/AuthContainer";
 import EnvelopeIcon from "../../components/icons/EnvelopeIcon";
 import LockIcon from "../../components/icons/LockIcon";
 import { logInUser } from "../../store/auth";
@@ -18,31 +20,41 @@ const Login = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <div className={styles.LoginInputWrapper}>
-                    <EnvelopeIcon />
-                    <input
-                        type="email"
-                        required
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
+            <div className={styles.AuthHeading}>
+                <h1>Welcome!</h1>
+                <p>Log into your account.</p>
+            </div>
+            <AuthContainer>
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.LoginInputWrapper}>
+                        <EnvelopeIcon />
+                        <input
+                            type="email"
+                            required
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className={styles.LoginInputWrapper}>
+                        <LockIcon />
+                        <input
+                            type="password"
+                            required
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className={styles.LoginButtonContainer}>
+                        <button type="submit">Sign In</button>
+                    </div>
+                </form>
+                <div className={styles.AuthLink}>
+                    No account yet?{" "}
+                    <Link to="/auth/register">Register here</Link>
                 </div>
-                <div className={styles.LoginInputWrapper}>
-                    <LockIcon />
-                    <input
-                        type="password"
-                        required
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div className={styles.LoginButtonContainer}>
-                    <button type="submit">Sign In</button>
-                </div>
-            </form>
+            </AuthContainer>
         </>
     );
 };

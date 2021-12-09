@@ -5,12 +5,15 @@
     box-shadow: $closeShadow;
     background-color: $light;
     margin-bottom: 2rem;
+    height: fit-content;
 }
 
 .ContainerHeading {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 2rem 2.5rem;
+    align-items: center;
+    padding: 2rem 2.5rem 1.5rem 2.5rem;
 }
 
 .ContainerButton {
@@ -19,7 +22,73 @@
     font-size: 0.825rem;
 }
 
+.ContainerHeading button:nth-child(2) {
+    margin-left: 0.5rem;
+}
+
 .Container h2 {
     font-size: 1.5rem;
     font-weight: 600;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.ContainerHeadingId {
+    color: $mid;
+}
+
+.ContainerHeadingInfo {
+    font-weight: 500;
+    color: $dark;
+    padding-top: 0;
+}
+
+.ContainerHeadingInfo span {
+    font-weight: 600;
+    color: $dark;
+}
+
+.ContainerContent {
+    padding: $contentPadding;
+    padding-top: 0;
+}
+
+.ContainerClose {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: all ease-in-out 0.1s;
+}
+
+.ContainerClose:hover {
+    opacity: 1;
+}
+
+.ContainerClose::after,
+.ContainerClose::before {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: $dark;
+    width: 2px;
+    height: 18px;
+}
+
+.ContainerClose::before {
+    transform: rotate(-45deg);
+}
+
+.ContainerClose::after {
+    transform: rotate(45deg);
+}
+
+@media screen and (max-width: $xs) {
+    .ContainerHeadingInfo {
+        display: block;
+    }
 }

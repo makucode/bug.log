@@ -1,11 +1,8 @@
-@import "../../globals.scss";
-
-.Project {
-}
+@import "../../globals";
 
 .ProjectSection1 {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 5fr 2fr;
     grid-template-rows: 1fr;
     gap: 0px 2rem;
     min-width: 100%;
@@ -18,4 +15,10 @@
 
 .ProjectSection1:nth-child(2) {
     width: 66%;
+}
+
+@media screen and (max-width: $m) {
+    .ProjectSection1 {
+        grid-template-columns: 1fr;
+    }
 }

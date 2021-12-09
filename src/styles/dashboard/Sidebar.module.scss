@@ -80,3 +80,26 @@
         stroke: $offDark;
     }
 }
+
+@media screen and (max-width: $m) {
+    .Sidebar {
+        transform: translateX(-100%);
+        transition: all $transitionFast 0.5s;
+        z-index: 100;
+    }
+
+    .SidebarOpen {
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .SidebarLogout {
+        margin-top: auto;
+        margin-bottom: 2rem;
+
+        button {
+            padding: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@import "../globals.scss";
+
+.ErrorMsg {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 2rem 2rem;
+}
+
+.ErrorPopup {
+    background-color: $light;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    border-radius: $radiusSm;
+    color: $alert;
+    box-shadow: $closeShadow;
+    font-size: 1.25rem;
+    font-weight: 600;
+    animation: popup 5s ease-in-out forwards;
+}
+
+@keyframes popup {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}

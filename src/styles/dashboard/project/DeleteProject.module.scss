@@ -1,0 +1,32 @@
+@import "../../globals";
+
+.DeleteProject {
+    position: sticky;
+    background-color: rgba($color: #000000, $alpha: 0.2);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+}
+
+.DeleteProjectWrapper {
+    width: 400px;
+}
+
+.DeleteProjectButtons {
+    padding: $contentPadding;
+    padding-top: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.DeleteProjectButtons button {
+    padding: 0.5rem 1rem !important;
+    width: calc(45%);
+    background-color: $offDark;
+    color: $light;
+}

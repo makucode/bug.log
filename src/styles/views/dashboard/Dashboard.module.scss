@@ -1,0 +1,67 @@
+@import "../../globals";
+
+.Dashboard {
+    display: flex;
+    background-color: $offLight;
+}
+
+.DashboardContent {
+    background-color: $offLight;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 260px;
+    min-height: 100vh;
+}
+
+.DashboardMainContent {
+    padding: 2rem 2rem 0 2rem;
+}
+
+.DashboardContent input {
+    width: calc(100% - 1rem);
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: $offLight;
+    padding: 0.5rem;
+    border-radius: $radiusSm;
+    margin-bottom: 1rem;
+}
+
+.DashboardContent label {
+    color: $dark;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.DashboardContent select {
+    border: none;
+    width: calc(100% - 0.5rem);
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: $offLight;
+    padding: 0.5rem;
+    border-radius: $radiusSm;
+    margin-bottom: 1rem;
+    color: $dark;
+}
+
+.DashboardContent label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.DashboardContent button {
+    padding: 0.25rem 0.5rem;
+    box-shadow: $closeShadow;
+    transition: all ease-in-out 0.1s;
+}
+
+.DashboardContent button:hover {
+    transform: translateY(-2px);
+}
+
+@media screen and (max-width: $m) {
+    .DashboardContent {
+        margin-left: 0;
+    }
+}

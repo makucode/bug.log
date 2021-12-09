@@ -1,20 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Logo from "../Logo";
 import DashboardIcon from "../icons/DashboardIcon";
 import styles from "../../styles/dashboard/Sidebar.module.scss";
 import UserCircleIcon from "../icons/UserCircleIcon";
 import ProjectIcon from "../icons/ProjectIcon";
 import UsersIcon from "../icons/UsersIcon";
-import TicketIcon from "../icons/TicketIcon";
+import LogoutButton from "./LogoutButton";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { sidebarClosed } from "../../store/ui";
 
 const Sidebar = () => {
-    const auth = { user: { role: "admin" } }; //useSelector((state) => state.auth); <----- !!!
+    const auth = useSelector((state) => state.auth);
     const location = useLocation();
+    const dispatch = useDispatch();
+    const { sidebarOpen } = useSelector((state) => state.ui);
+
+    const { width } = useWindowDimensions();
+
+    useEffect(() => {
+        dispatch({ type: sidebarClosed.type });
+    }, [dispatch, location]);
 
     return (
-        <nav className={styles.Sidebar}>
+        <nav
+            className={`${styles.Sidebar} ${
+                sidebarOpen ? styles.SidebarOpen : ""
+            }`}
+        >
             <div className={styles.SidebarLogo}>
                 <Logo />
             </div>
@@ -35,7 +49,8 @@ const Sidebar = () => {
                 </li>
                 <li
                     className={
-                        location.pathname.includes("projects")
+                        location.pathname.includes("projects") ||
+                        location.pathname.includes("tickets")
                             ? styles.NavActive
                             : ""
                     }
@@ -54,7 +69,7 @@ const Sidebar = () => {
                             : ""
                     }
                 >
-                    <Link to="/dashboard/profile">
+                    <Link to="/dashboard/account">
                         <div className={styles.SidebarIcon}>
                             <UserCircleIcon />
                         </div>
@@ -73,11 +88,16 @@ const Sidebar = () => {
                             <div className={styles.SidebarIcon}>
                                 <UsersIcon />
                             </div>
-                            Users
+                            Admin
                         </Link>
                     </li>
                 )}
             </ul>
+            {width <= 1024 && (
+                <div className={styles.SidebarLogout}>
+                    <LogoutButton />
+                </div>
+            )}
         </nav>
     );
 };

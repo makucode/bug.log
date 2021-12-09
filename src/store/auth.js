@@ -15,10 +15,12 @@ const authSlice = createSlice({
         },
         userRequestFailed: (auth, action) => {
             auth.loading = false;
-            if (action.payload.includes("404"))
-                return (auth.error =
-                    "You have entered an invalid username or password");
             auth.error = action.payload;
+        },
+        userFetched: (auth, action) => {
+            auth.loading = false;
+            auth.user = { ...action.payload, token: auth.user.token };
+            localStorage.setItem("auth", JSON.stringify(auth));
         },
         userRegistered: (auth, action) => {
             auth.loading = false;
@@ -31,8 +33,8 @@ const authSlice = createSlice({
             localStorage.setItem("auth", JSON.stringify(auth));
         },
         userLoggedOut: (auth, action) => {
-            auth.loading = null;
-            auth.user = action.payload;
+            auth.loading = false;
+            auth.user = null;
             localStorage.removeItem("auth");
         },
     },
@@ -44,6 +46,7 @@ const {
     userRegistered,
     userLoggedIn,
     userLoggedOut,
+    userFetched,
 } = authSlice.actions;
 
 export default authSlice.reducer;
@@ -52,6 +55,18 @@ export default authSlice.reducer;
 
 const userUrl = "users";
 const authUrl = "auth";
+
+export const fetchUser = (id) => (dispatch) => {
+    dispatch(
+        callRequest({
+            url: userUrl + "/" + id,
+            method: "get",
+            onRequest: userRequested.type,
+            onSuccess: userFetched.type,
+            onError: userRequestFailed.type,
+        })
+    );
+};
 
 export const registerUser = (user) => (dispatch) => {
     dispatch(

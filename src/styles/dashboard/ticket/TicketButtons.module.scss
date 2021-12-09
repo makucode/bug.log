@@ -1,0 +1,9 @@
+@import "../../globals";
+
+.TicketButtons button {
+    padding: 0.4rem 0.5rem;
+}
+
+.TicketButtons button svg {
+    fill: $light;
+}

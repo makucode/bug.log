@@ -1,18 +1,15 @@
 @import "../globals.scss";
 
 .Ticket {
-    padding: $contentPadding;
-    padding-top: 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    gap: 0px 0px;
+    gap: 2rem 2rem;
 }
 
 .TicketContent {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem 0;
+    padding: $contentPadding;
+    padding-top: 0;
 }
 
 .TicketSubHeading {
@@ -24,15 +21,20 @@
 .TicketRow {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
+    gap: 0px 1rem;
+    margin-bottom: 1rem;
 }
 
 .TicketRow2 {
     display: grid;
     grid-template-columns: 1fr 1fr 2fr 2fr;
-    grid-template-rows: 1fr;
-    gap: 0px 0px;
+    gap: 0px 1rem;
+}
+
+.TicketRowSingleCol {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 1rem;
 }
 
 .TicketTag {
@@ -58,4 +60,20 @@
 }
 .TagBlue {
     background-color: $blue;
+}
+
+@media screen and (max-width: $m) {
+    .Ticket {
+        grid-template-columns: 1fr;
+        gap: 0 0;
+    }
+
+    .TicketRow {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .TicketRow2 {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 1rem;
+    }
 }

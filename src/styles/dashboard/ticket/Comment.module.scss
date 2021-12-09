@@ -1,0 +1,69 @@
+@import "../../globals";
+
+.Comment {
+    background-color: $offLight;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: $radiusSm;
+    box-shadow: $closeShadow;
+}
+
+.CommentHeading {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.25rem;
+}
+
+.CommentAuthor,
+.CommentInfo {
+    font-size: 0.825rem;
+    font-weight: 600;
+    color: $dark;
+    display: block;
+}
+
+.CommentInfo {
+    color: $mid;
+}
+
+.CommentComment {
+    margin-bottom: 0.5rem;
+}
+
+.CommentInfoDivider {
+    display: inline-block;
+    margin: 0 0.25rem;
+}
+
+.CommentDelete {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: all ease-in-out 0.1s;
+}
+
+.CommentDelete:hover {
+    opacity: 1;
+}
+
+.CommentDelete::after,
+.CommentDelete::before {
+    position: absolute;
+    content: "";
+    display: block;
+    background-color: $dark;
+    width: 2px;
+    height: 14px;
+}
+
+.CommentDelete::before {
+    transform: rotate(-45deg);
+}
+
+.CommentDelete::after {
+    transform: rotate(45deg);
+}

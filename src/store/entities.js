@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
 import projects from "./projects";
+import tickets from "./tickets";
+import users from "./users";
+import comments from "./comments";
 
-const entitesReducer = combineReducers({ projects });
+const entitiesReducer = combineReducers({ projects, tickets, users, comments });
 
-export default entitesReducer;
+export default entitiesReducer;

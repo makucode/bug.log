@@ -1,0 +1,14 @@
+@import "../../globals";
+
+.CommentForm {
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    gap: 0 0.5rem;
+}
+
+.CommentForm button {
+    height: fit-content;
+    padding: 0.5rem 1rem;
+    background-color: $offDark;
+    color: $light;
+}

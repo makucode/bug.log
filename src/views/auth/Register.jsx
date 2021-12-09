@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import LockIcon from "../../components/icons/LockIcon";
 import EnvelopeIcon from "../../components/icons/EnvelopeIcon";
 import UserIcon from "../../components/icons/UserIcon";
-import styles from "../../styles/views/auth/Register.module.scss";
-import { useDispatch } from "react-redux";
+import AuthContainer from "../../components/auth/AuthContainer";
 import { registerUser } from "../../store/auth";
+import styles from "../../styles/views/auth/Register.module.scss";
 
 const Register = () => {
     const [firstName, setFirstName] = useState("");
@@ -49,63 +51,77 @@ const Register = () => {
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <div className={styles.RegisterName}>
+            <div className={styles.AuthHeading}>
+                <h1>Create new account</h1>
+                <p>
+                    Create a bug.log account now to enhance your workflow with
+                    easy bug tracking.
+                </p>
+            </div>
+            <AuthContainer>
+                <form onSubmit={handleSubmit}>
+                    <div className={styles.RegisterName}>
+                        <div className={styles.RegisterInputWrapper}>
+                            <UserIcon />
+                            <input
+                                type="text"
+                                required
+                                placeholder="First name"
+                                value={firstName}
+                                onChange={(e) => setFirstName(e.target.value)}
+                            />
+                        </div>
+                        <div className={styles.RegisterInputWrapper}>
+                            <input
+                                type="text"
+                                required
+                                placeholder="Last name"
+                                value={lastName}
+                                onChange={(e) => setLastName(e.target.value)}
+                            />
+                        </div>
+                    </div>
                     <div className={styles.RegisterInputWrapper}>
-                        <UserIcon />
+                        <EnvelopeIcon />
                         <input
-                            type="text"
+                            type="email"
                             required
-                            placeholder="First name"
-                            value={firstName}
-                            onChange={(e) => setFirstName(e.target.value)}
+                            placeholder="Email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                         />
                     </div>
                     <div className={styles.RegisterInputWrapper}>
+                        <LockIcon />
                         <input
-                            type="text"
+                            type="password"
                             required
-                            placeholder="Last name"
-                            value={lastName}
-                            onChange={(e) => setLastName(e.target.value)}
+                            placeholder="Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
-                </div>
-                <div className={styles.RegisterInputWrapper}>
-                    <EnvelopeIcon />
-                    <input
-                        type="email"
-                        required
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div className={styles.RegisterInputWrapper}>
-                    <LockIcon />
-                    <input
-                        type="password"
-                        required
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                {passwordStr && (
-                    <div className={styles.RegisterPasswordStrength}>
-                        password strength:{" "}
-                        <span style={{ color: getColor() }}>
-                            <span>{passwordStr}</span>
-                        </span>
+                    {passwordStr && (
+                        <div className={styles.RegisterPasswordStrength}>
+                            password strength:{" "}
+                            <span style={{ color: getColor() }}>
+                                <span>{passwordStr}</span>
+                            </span>
+                        </div>
+                    )}
+                    {validateErr && (
+                        <div className={styles.RegisterValidate}>
+                            {validateErr}
+                        </div>
+                    )}
+                    <div className={styles.RegisterButtonContainer}>
+                        <button type="submit">Create account</button>
                     </div>
-                )}
-                {validateErr && (
-                    <div className={styles.RegisterValidate}>{validateErr}</div>
-                )}
-                <div className={styles.RegisterButtonContainer}>
-                    <button type="submit">Create account</button>
+                </form>
+                <div className={styles.AuthLink}>
+                    Already have an account? <Link to="/auth">Log in here</Link>
                 </div>
-            </form>
+            </AuthContainer>
         </>
     );
 };

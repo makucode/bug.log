@@ -14,3 +14,19 @@
     width: 40%;
     margin: 0 auto;
 }
+
+@media screen and (max-width: $m) {
+    .HomeChartWrapper {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .HomeChart {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: $s) {
+    .HomeChart {
+        width: 70%;
+    }
+}
