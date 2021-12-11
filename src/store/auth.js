@@ -27,6 +27,11 @@ const authSlice = createSlice({
             auth.user = action.payload;
             localStorage.setItem("auth", JSON.stringify(auth));
         },
+        userVerified: (auth, action) => {
+            auth.loading = false;
+            auth.user = action.payload;
+            localStorage.setItem("auth", JSON.stringify(auth));
+        },
         userLoggedOut: (auth, action) => {
             auth.loading = false;
             auth.user = null;
@@ -40,6 +45,7 @@ const {
     userRequestFailed,
     userRegistered,
     userLoggedIn,
+    userVerified,
     userLoggedOut,
 } = authSlice.actions;
 
@@ -58,6 +64,18 @@ export const registerUser = (user) => (dispatch) => {
             data: user,
             onRequest: userRequested.type,
             onSuccess: userRegistered.type,
+            onError: userRequestFailed.type,
+        })
+    );
+};
+
+export const verifyUser = () => (dispatch) => {
+    dispatch(
+        callRequest({
+            url: authUrl + "/verify",
+            method: "post",
+            onRequest: userRequested.type,
+            onSuccess: userVerified.type,
             onError: userRequestFailed.type,
         })
     );

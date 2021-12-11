@@ -33,6 +33,10 @@ function App() {
                     />
                     <Route path="/dashboard/projects" element={<Projects />} />
                     <Route path="/dashboard/tickets/:id" element={<Ticket />} />
+                    <Route
+                        path="/dashboard/tickets"
+                        element={<Navigate to="/dashboard/projects" />}
+                    />
                     <Route path="/dashboard/account" element={<Account />} />
                     <Route path="/dashboard/admin" element={<Admin />} />
                     <Route path="/dashboard" element={<Home />} />

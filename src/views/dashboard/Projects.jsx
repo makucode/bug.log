@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import Container from "../../components/dashboard/Container";
 import DataInfo from "../../components/dashboard/DataInfo";
-import List from "../../components/dashboard/List";
 import Popup from "../../components/dashboard/Popup";
 import ProjectForm from "../../components/dashboard/ProjectForm";
+import ProjectList from "../../components/dashboard/projects/ProjectList";
 
 import styles from "../../styles/views/dashboard/Projects.module.scss";
 
@@ -48,7 +48,10 @@ const Projects = () => {
                         )}
                     </div>
                     {projects.length > 0 && !projects.loading ? (
-                        <List list={projectList} slug="/dashboard/projects/" />
+                        <ProjectList
+                            list={projectList}
+                            slug="/dashboard/projects/"
+                        />
                     ) : (
                         <DataInfo />
                     )}

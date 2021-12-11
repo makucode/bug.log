@@ -11,6 +11,7 @@ import { fetchUsers } from "../store/users";
 import styles from "../styles/views/dashboard/Dashboard.module.scss";
 import { motion } from "framer-motion";
 import { fadeInOpacity } from "../utils/animations";
+import { verifyUser } from "../store/auth";
 
 const Dashboard = () => {
     const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Dashboard = () => {
 
     useEffect(() => {
         document.title = "bug.log - Dashboard";
+        dispatch(verifyUser());
     }, []);
 
     useEffect(() => {

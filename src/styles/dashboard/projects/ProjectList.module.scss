@@ -1,0 +1,101 @@
+@import "../../globals";
+
+.ProjectListTags {
+    background-color: $offLight2;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: $dark;
+}
+
+.ProjectListRow {
+    color: $dark;
+}
+
+.ProjectListRow:hover {
+    background-color: $offLight2;
+    box-shadow: $closeShadow;
+    cursor: pointer;
+}
+
+.ProjectListRowTitle {
+    font-weight: 600;
+    color: $darkest;
+}
+
+.ProjectList a {
+    text-decoration: none;
+}
+
+.ProjectListRow span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 0.5rem;
+}
+
+.ProjectListRow,
+.ProjectListTags {
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas: ". . .";
+    height: 50px;
+    align-items: center;
+    border-top: solid 1px $offLight;
+    padding: 0 2.5rem;
+    transition: all ease-in-out 0.1s;
+}
+
+.ProjectListPrio {
+    font-size: 0.825rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    color: $offLight;
+    width: fit-content;
+    border-radius: $radiusR;
+}
+
+.Solved {
+    background-color: $green;
+}
+
+.PrioLow {
+    background-color: $dark;
+}
+
+.PrioHigh {
+    background-color: $orange;
+}
+
+.PrioCritical {
+    background-color: $alert;
+}
+
+.PrioMid {
+    background-color: $blue;
+}
+
+@media screen and (max-width: $m) {
+    .ProjectListDesc {
+        display: none;
+    }
+
+    .ProjectListRow,
+    .ProjectListTags {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (max-width: $xs) {
+    .ProjectListMembers {
+        display: none;
+    }
+
+    .ProjectListRow,
+    .ProjectListTags {
+        grid-template-columns: 1fr;
+    }
+}
