@@ -27,7 +27,7 @@ const List = ({ list, slug, handler }) => {
                 color = styles.PrioLow;
                 break;
             case "Solved":
-                color = styles.PrioLow;
+                color = styles.Solved;
                 break;
             default:
                 break;

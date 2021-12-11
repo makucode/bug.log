@@ -1,18 +1,14 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import Container from "../Container";
 import Popup from "../Popup";
 import { deleteUser } from "../../../store/users";
 import styles from "../../../styles/dashboard/account/DeletePopup.module.scss";
-import useOutsideClick from "../../../hooks/useOutsideClick";
 
 const DeletePopup = ({ id, open, setOpen }) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, setOpen);
 
     const handleDelete = () => {
         dispatch(deleteUser(id));
@@ -23,7 +19,7 @@ const DeletePopup = ({ id, open, setOpen }) => {
     return (
         <Popup isOpen={open}>
             <div className={styles.DeletePopup}>
-                <div className={styles.DeletePopupWrapper} ref={wrapperRef}>
+                <div className={styles.DeletePopupWrapper}>
                     <Container>
                         <div className="ContainerHeading">
                             <h2>Delete Account?</h2>

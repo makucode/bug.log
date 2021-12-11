@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Container from "../Container";
 import { updateUser } from "../../../store/users";
-import useOutsideClick from "../../../hooks/useOutsideClick";
 import styles from "../../../styles/dashboard/admin/EditUser.module.scss";
 
 const EditUser = ({ popup, userId }) => {
@@ -17,9 +16,6 @@ const EditUser = ({ popup, userId }) => {
 
     const dispatch = useDispatch();
 
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, popup);
-
     const handleUpdateUser = (e) => {
         e.preventDefault();
         dispatch(updateUser(user._id, { firstName, lastName, email, role }));
@@ -28,7 +24,7 @@ const EditUser = ({ popup, userId }) => {
 
     return (
         <div className={styles.EditUser}>
-            <div className={styles.EditUserWrapper} ref={wrapperRef}>
+            <div className={styles.EditUserWrapper}>
                 <Container>
                     <div className="ContainerHeading">
                         <h2>Update User</h2>

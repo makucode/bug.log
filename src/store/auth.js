@@ -17,11 +17,6 @@ const authSlice = createSlice({
             auth.loading = false;
             auth.error = action.payload;
         },
-        userFetched: (auth, action) => {
-            auth.loading = false;
-            auth.user = { ...action.payload, token: auth.user.token };
-            localStorage.setItem("auth", JSON.stringify(auth));
-        },
         userRegistered: (auth, action) => {
             auth.loading = false;
             auth.user = action.payload;
@@ -46,7 +41,6 @@ const {
     userRegistered,
     userLoggedIn,
     userLoggedOut,
-    userFetched,
 } = authSlice.actions;
 
 export default authSlice.reducer;
@@ -55,18 +49,6 @@ export default authSlice.reducer;
 
 const userUrl = "users";
 const authUrl = "auth";
-
-export const fetchUser = (id) => (dispatch) => {
-    dispatch(
-        callRequest({
-            url: userUrl + "/" + id,
-            method: "get",
-            onRequest: userRequested.type,
-            onSuccess: userFetched.type,
-            onError: userRequestFailed.type,
-        })
-    );
-};
 
 export const registerUser = (user) => (dispatch) => {
     dispatch(

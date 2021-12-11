@@ -40,8 +40,8 @@ const Home = () => {
                     tickets.filter((ticket) => ticket.type === "Request")
                         .length,
                 ],
-                backgroundColor: ["#FEE085", "#FF8370", "#B9D6F2", "#86B36B"],
-                borderColor: ["#FEE085", "#FF8370", "#B9D6F2", "#86B36B"],
+                backgroundColor: ["#fba440", "indianred", "#78c4ec", "#30b87d"],
+                borderColor: ["#fba440", "indianred", "#78c4ec", "#30b87d"],
                 borderWidth: 0,
             },
         ],
@@ -62,8 +62,8 @@ const Home = () => {
                     tickets.filter((ticket) => ticket.priority === "Low")
                         .length,
                 ],
-                backgroundColor: ["#FF8370", "#FEE085", "#B9D6F2", "#86B36B"],
-                borderColor: ["#FF8370", "#FEE085", "#B9D6F2", "#86B36B"],
+                backgroundColor: ["indianred", "#fba440", "#78c4ec", "#30b87d"],
+                borderColor: ["indianred", "#fba440", "#78c4ec", "#30b87d"],
                 borderWidth: 0,
             },
         ],
@@ -79,8 +79,8 @@ const Home = () => {
                     tickets.filter((ticket) => ticket.isSolved === false)
                         .length,
                 ],
-                backgroundColor: ["#86B36B", "#FEE085"],
-                borderColor: ["#86B36B", "#FEE085"],
+                backgroundColor: ["#30b87d", "#fba440"],
+                borderColor: ["#30b87d", "#fba440"],
                 borderWidth: 0,
             },
         ],

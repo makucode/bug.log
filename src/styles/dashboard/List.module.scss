@@ -58,8 +58,12 @@
     border-radius: $radiusR;
 }
 
-.PrioLow {
+.Solved {
     background-color: $green;
+}
+
+.PrioLow {
+    background-color: $dark;
 }
 
 .PrioHigh {
@@ -69,6 +73,7 @@
 .PrioCritical {
     background-color: $alert;
 }
+
 .PrioMid {
     background-color: $blue;
 }

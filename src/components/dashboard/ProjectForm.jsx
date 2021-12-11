@@ -1,10 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
 import Container from "./Container";
 import { createProject, updateProject } from "../../store/projects.js";
-import useOutsideClick from "../../hooks/useOutsideClick";
 import styles from "../../styles/dashboard/ProjectForm.module.scss";
 
 const ProjectForm = ({ popup, projectId }) => {
@@ -23,9 +22,6 @@ const ProjectForm = ({ popup, projectId }) => {
     const [members, setMembers] = useState((project && project.members) || []);
 
     const dispatch = useDispatch();
-
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, popup);
 
     const animatedComponents = makeAnimated();
 
@@ -73,10 +69,14 @@ const ProjectForm = ({ popup, projectId }) => {
 
     return (
         <div className={styles.ProjectForm}>
-            <div className={styles.ProjectFormWrapper} ref={wrapperRef}>
+            <div className={styles.ProjectFormWrapper}>
                 <Container>
                     <div className="ContainerHeading">
-                        <h2>Create a new Project</h2>
+                        <h2>
+                            {!projectId
+                                ? "Create a new Project"
+                                : "Update Project"}
+                        </h2>
                         <div
                             className="ContainerClose"
                             onClick={() => popup(false)}

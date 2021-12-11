@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import useOutsideClick from "../../hooks/useOutsideClick";
 import Container from "./Container";
 import styles from "../../styles/dashboard/TicketForm.module.scss";
 import { createTicket, updateTicket } from "../../store/tickets";
@@ -29,9 +28,6 @@ const TicketForm = ({ popup, ticket, projectId }) => {
     );
 
     const dispatch = useDispatch();
-
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, popup);
 
     const animatedComponents = makeAnimated();
 
@@ -86,7 +82,7 @@ const TicketForm = ({ popup, ticket, projectId }) => {
         <>
             {users && (
                 <div className={styles.TicketForm}>
-                    <div className={styles.TicketFormWrapper} ref={wrapperRef}>
+                    <div className={styles.TicketFormWrapper}>
                         <Container>
                             <div className="ContainerHeading">
                                 <h2>Open a new Ticket</h2>

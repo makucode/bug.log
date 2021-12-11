@@ -58,8 +58,13 @@
 .TagAlert {
     background-color: $alert;
 }
+
 .TagBlue {
     background-color: $blue;
+}
+
+.TagDark {
+    background-color: $dark;
 }
 
 @media screen and (max-width: $m) {

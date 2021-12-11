@@ -62,7 +62,7 @@ const DashboardHeader = () => {
             )}
 
             <div className={styles.HeaderProfileLink}>
-                <Link to="/dashboard/profile">
+                <Link to="/dashboard/account">
                     {auth.user.firstName + " " + auth.user.lastName}
                 </Link>
                 <LogoutButton />

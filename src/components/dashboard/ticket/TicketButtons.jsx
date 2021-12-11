@@ -13,7 +13,7 @@ const TicketButtons = ({ currTicket }) => {
     const [deleteTicket, setDeleteTicket] = useState(false);
 
     return (
-        <div className={"ContainerButtons " + styles.TicketButtons}>
+        <>
             {updateTicket && (
                 <Popup isOpen={updateTicket}>
                     <TicketForm
@@ -31,23 +31,25 @@ const TicketButtons = ({ currTicket }) => {
                     />
                 </Popup>
             )}
-            <button
-                className="ContainerButton"
-                onClick={() => setUpdateTicket(true)}
-            >
-                <EditIcon />
-            </button>
-            {(role === "admin" ||
-                role === "manager" ||
-                currTicket.author === _id) && (
+            <div className={"ContainerButtons " + styles.TicketButtons}>
                 <button
-                    className="ContainerButton ButtonAlert"
-                    onClick={() => setDeleteTicket(true)}
+                    className="ContainerButton"
+                    onClick={() => setUpdateTicket(true)}
                 >
-                    <DeleteIcon />
+                    <EditIcon />
                 </button>
-            )}
-        </div>
+                {(role === "admin" ||
+                    role === "manager" ||
+                    currTicket.author === _id) && (
+                    <button
+                        className="ContainerButton ButtonAlert"
+                        onClick={() => setDeleteTicket(true)}
+                    >
+                        <DeleteIcon />
+                    </button>
+                )}
+            </div>
+        </>
     );
 };
 

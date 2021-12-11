@@ -64,7 +64,7 @@ const Sidebar = () => {
                 </li>
                 <li
                     className={
-                        location.pathname.includes("profile")
+                        location.pathname.includes("account")
                             ? styles.NavActive
                             : ""
                     }
@@ -93,7 +93,7 @@ const Sidebar = () => {
                     </li>
                 )}
             </ul>
-            {width <= 1024 && (
+            {width <= 530 && (
                 <div className={styles.SidebarLogout}>
                     <LogoutButton />
                 </div>

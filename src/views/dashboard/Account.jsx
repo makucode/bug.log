@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import AccountForm from "../../components/dashboard/account/AccountForm";
 import DeletePopup from "../../components/dashboard/account/DeletePopup";
 import Container from "../../components/dashboard/Container";
 import Popup from "../../components/dashboard/Popup";
-import { fetchUser } from "../../store/auth";
 import styles from "../../styles/views/dashboard/Account.module.scss";
 
 const Account = () => {
@@ -14,12 +13,6 @@ const Account = () => {
     const [changeEmail, setChangeEmail] = useState(false);
 
     const isPending = auth.user.role === "pending";
-
-    const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(fetchUser(auth.user._id));
-    }, [dispatch]);
 
     return (
         <div className={styles.Account}>

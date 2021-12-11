@@ -1,6 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import useOutsideClick from "../../../hooks/useOutsideClick";
 import { updateUser } from "../../../store/users";
 import styles from "../../../styles/dashboard/account/AccountForm.module.scss";
 import Container from "../Container";
@@ -14,9 +13,6 @@ const AccountForm = ({ popup, prop }) => {
     const desc = prop[0].toUpperCase() + prop.substring(1);
 
     const dispatch = useDispatch();
-
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, popup);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,7 +35,7 @@ const AccountForm = ({ popup, prop }) => {
 
     return (
         <div className={styles.AccountForm}>
-            <div className={styles.AccountFormWrapper} ref={wrapperRef}>
+            <div className={styles.AccountFormWrapper}>
                 <Container>
                     <div className="ContainerHeading">
                         <h2>Change {desc}</h2>

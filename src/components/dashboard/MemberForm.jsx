@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import makeAnimated from "react-select/animated";
-import useOutsideClick from "../../hooks/useOutsideClick";
 import { updateProject } from "../../store/projects";
 import Container from "./Container";
 import styles from "../../styles/dashboard/MemberForm.module.scss";
@@ -20,8 +19,6 @@ const AddMemberForm = ({ popup, projectId, memberList }) => {
     }));
 
     const animatedComponents = makeAnimated();
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, popup);
 
     const handleAddMember = (e) => {
         e.preventDefault();
@@ -39,7 +36,7 @@ const AddMemberForm = ({ popup, projectId, memberList }) => {
 
     return (
         <div className={styles.MemberForm}>
-            <div className={styles.MemberFormWrapper} ref={wrapperRef}>
+            <div className={styles.MemberFormWrapper}>
                 <Container>
                     <div className="ContainerHeading">
                         <h2>Project Members</h2>

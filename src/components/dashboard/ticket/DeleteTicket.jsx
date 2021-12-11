@@ -1,15 +1,11 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteTicket } from "../../../store/tickets";
-import useOutsideClick from "../../../hooks/useOutsideClick";
 import styles from "../../../styles/dashboard/ticket/DeleteTicket.module.scss";
 import Container from "../Container";
 
 const DeleteTicket = ({ popup, ticketId }) => {
     const dispatch = useDispatch();
-
-    const wrapperRef = useRef(null);
-    useOutsideClick(wrapperRef, popup);
 
     const handleDelete = () => {
         dispatch(deleteTicket(ticketId));
@@ -18,7 +14,7 @@ const DeleteTicket = ({ popup, ticketId }) => {
 
     return (
         <div className={styles.DeleteTicket}>
-            <div className={styles.DeleteTicketWrapper} ref={wrapperRef}>
+            <div className={styles.DeleteTicketWrapper}>
                 <Container>
                     <div className="ContainerHeading">
                         <h2>Delete Ticket?</h2>

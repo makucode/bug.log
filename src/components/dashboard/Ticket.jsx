@@ -25,6 +25,7 @@ const Ticket = ({ ticket }) => {
         else if (tag === "Resolved" || tag === "Request")
             color = styles.TagGreen;
         else if (tag === "Critical" || tag === "Error") color = styles.TagAlert;
+        else if (tag === "Low") color = styles.TagDark;
         else color = styles.TagBlue;
 
         return <p className={styles.TicketTag + " " + color}>{tag}</p>;

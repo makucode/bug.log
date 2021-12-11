@@ -18,6 +18,10 @@ const Dashboard = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        document.title = "bug.log - Dashboard";
+    }, []);
+
+    useEffect(() => {
         dispatch(fetchProjects());
         dispatch(fetchTickets());
         dispatch(fetchUsers());
